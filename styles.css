@@ -69,8 +69,18 @@ h3 {
 }
 
 .content-item {
-    margin: 5px;
-    padding: 40px
+    padding: 10px;
+    margin: 20px auto;
+}
+
+.dot {
+    display: block;
+    border: 5px solid #003366;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    z-index: -2;
 }
 
 .fancy {
@@ -127,4 +137,5 @@ span.fade{
         object-fit: cover;
         height: 600px;
     }
+    
 }
