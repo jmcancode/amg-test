@@ -1,5 +1,6 @@
-// on page load
+// loading animation after page load
 window.addEventListener('load', onTick, onTick1, onTick2, false)
+
 // campaign goal
 const text = document.querySelector('.fancy')
 const strText = text.textContent;
@@ -9,7 +10,6 @@ text.textContent = "";
 
 // loop over the word then inject span
 for(let i=0; i < splitText.length; i++){
-    setTimeout(() => {(i)}, 1000)
     text.innerHTML += "<span>" + splitText[i] + "</span>"
 }
 
@@ -31,8 +31,6 @@ function onTick() {
     }    
    }, 1000)
 }
-
-
 
 // Convocation animation
 const text1 = document.querySelector('.fancy1')
@@ -66,8 +64,6 @@ function onTick1() {
     }
     }, 2500)
 }
-
-
 
 // serving san antonio animation
 const text2 = document.querySelector('.fancy2')
