@@ -16,12 +16,8 @@ for(let i=0; i < splitText.length; i++){
 let char = 0;
 let timer = setInterval(onTick, 1000);
 
-setTimeout(() => {
-    onTick
-}, 1000);
-
-
 function onTick() {
+   setTimeout(() => {
     const span = text.querySelectorAll('span')[char];
     span.classList.add('fade');
     char++
@@ -29,12 +25,13 @@ function onTick() {
         complete();
         return;
     }
+    function complete() {
+        clearInterval(timer);
+        timer=null
+    }    
+   }, 1000)
 }
 
-function complete() {
-    clearInterval(timer);
-    timer=null
-}
 
 
 // Convocation animation
@@ -52,24 +49,25 @@ for(let i=0; i < splitText1.length; i++){
 let char1 = 0;
 let timer1 = setInterval(onTick1, 1000);
 
-setTimeout(() => {
-    onTick1
-}, 3000);
-
 function onTick1() {
-    const span = text1.querySelectorAll('span')[char1];
+    setTimeout(() => {
+        const span = text1.querySelectorAll('span')[char1];
     span.classList.add('fade');
     char1++
+    
     if(char1 === splitText1.length){
         complete1();
         return;
     }
+
+    function complete1() {
+        clearInterval(timer1);
+        timer1=null
+    }
+    }, 2500)
 }
 
-function complete1() {
-    clearInterval(timer1);
-    timer1=null
-}
+
 
 // serving san antonio animation
 const text2 = document.querySelector('.fancy2')
@@ -86,19 +84,22 @@ for(let i=0; i < splitText2.length; i++){
 let char2 = 0;
 let timer2 = setInterval(onTick2, 1000);
 
-
 function onTick2() {
+   setTimeout(() => {
     const span = text2.querySelectorAll('span')[char2];
     span.classList.add('fade');
     char2++
     if(char2 === splitText2.length){
         complete2();
-        setTimeout(() => onTick2, 9000)
         return;
+    } 
+    function complete2() {
+        clearInterval(timer2);
+        timer2=null
     }
+   }, 8500)
 }
 
-function complete2() {
-    clearInterval(timer2);
-    timer2=null
-}
+
+
+
