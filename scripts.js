@@ -1,19 +1,25 @@
 // on page load
-window.addEventListener('load', onTick, false)
-
+window.addEventListener('load', onTick, onTick1, onTick2, false)
+// campaign goal
 const text = document.querySelector('.fancy')
 const strText = text.textContent;
 const splitText = strText.split("");
 // reset text
 text.textContent = "";
 
-// loop over 
+// loop over the word then inject span
 for(let i=0; i < splitText.length; i++){
+    setTimeout(() => {(i)}, 1000)
     text.innerHTML += "<span>" + splitText[i] + "</span>"
 }
 
 let char = 0;
 let timer = setInterval(onTick, 1000);
+
+setTimeout(() => {
+    onTick
+}, 1000);
+
 
 function onTick() {
     const span = text.querySelectorAll('span')[char];
@@ -30,8 +36,8 @@ function complete() {
     timer=null
 }
 
-window.addEventListener('load', onTick1, false)
 
+// Convocation animation
 const text1 = document.querySelector('.fancy1')
 const strText1 = text1.textContent;
 const splitText1 = strText1.split("");
@@ -45,6 +51,10 @@ for(let i=0; i < splitText1.length; i++){
 
 let char1 = 0;
 let timer1 = setInterval(onTick1, 1000);
+
+setTimeout(() => {
+    onTick1
+}, 3000);
 
 function onTick1() {
     const span = text1.querySelectorAll('span')[char1];
@@ -61,8 +71,7 @@ function complete1() {
     timer1=null
 }
 
-window.addEventListener('load', onTick2, false)
-
+// serving san antonio animation
 const text2 = document.querySelector('.fancy2')
 const strText2 = text2.textContent;
 const splitText2 = strText2.split("");
@@ -77,12 +86,14 @@ for(let i=0; i < splitText2.length; i++){
 let char2 = 0;
 let timer2 = setInterval(onTick2, 1000);
 
+
 function onTick2() {
     const span = text2.querySelectorAll('span')[char2];
     span.classList.add('fade');
     char2++
     if(char2 === splitText2.length){
         complete2();
+        setTimeout(() => onTick2, 9000)
         return;
     }
 }

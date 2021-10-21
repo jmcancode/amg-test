@@ -33,12 +33,15 @@ span {
     transition: all 1s ease;
     display: inline-block;
     transform: translateY(50px);
+    animation-delay: 1s;
 }
 
 span.fade{
     opacity: 1;
     transform: translateY(0px);
 }
+
+
 
 
 p {
@@ -131,13 +134,11 @@ h3 {
     height: 100px;
     z-index: -2;
     position: absolute;
-    
-
 }
 
 .fancy {
     color: #00acee;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     letter-spacing: 1.5px;
     margin: 0;
@@ -146,9 +147,10 @@ h3 {
     display: flex;
     flex-direction: row;
 }
+
 .fancy1 {
     color: #00acee;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     letter-spacing: 1.5px;
     margin: 0;
@@ -157,9 +159,10 @@ h3 {
     display: flex;
     flex-direction: row;
 }
+
 .fancy2 {
     color: #00acee;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     letter-spacing: 1.5px;
     margin: 0;
@@ -168,15 +171,15 @@ h3 {
     display: flex;
     flex-direction: row;
 }
+
 .text-container {
     margin: 10px;
     padding: 15px;
 }
-
 /* content css ends here */
 
 /* iPad break 768px page break */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
     .content {
         display: flex;
         flex-direction: column;
@@ -223,6 +226,11 @@ h3 {
 
     .lato {
         font-size: 1em;
+    }
+
+    p {
+        font-size: 15px;
+        font-weight: 500;
     }
 
 }
